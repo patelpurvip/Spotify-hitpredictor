@@ -10,7 +10,7 @@ The dataset by Farooq has features for tracks fetched using Spotify's Web API, b
 ## Project collaborators
 * Purvi P. Patel
 * Cristina Bardan
-* Grecia Villereal
+* Grecia Villarreal
 * Heidy Guzman
 
 ## Copyright
