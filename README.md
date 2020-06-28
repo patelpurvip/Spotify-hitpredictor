@@ -3,22 +3,22 @@ This project was designed as a machine learning exercise using the spotify "hit 
 Original dataset available at: https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset
 
 ![Original image from Luxemburg Times](https://luwo-ldocs-prod.imgix.net/2017/12/11/2e0270cd-2d6b-4ca7-bbc4-b1b8e0f998a0.jpeg)
-
-
+  
+  
 ## Project collaborators
 * Purvi P. Patel
 * Cristina Bardan
 * Grecia Villarreal
 * Heidy Guzman
-
-
+  
+  
 ## Contents
 * original data
 * models (& variations) tested
 * deployment of the best model (Random Forest)
 * final prodect webpage
-
-
+  
+  
 ## Project Scope
 The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web API, base on the tracks labeled `hit` or `flop` by the author, which can be used to make a classification model to predicts whether any given track would be a 'Hit' or not. 
 
@@ -57,15 +57,15 @@ https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-f
 
 Ansari's original cource code can be found at: 
 https://github.com/fortytwo102/the-spotify-hit-predictor-dataset
-
-
+  
+  
 ## Methodology (CRIS, HEIDY -- SI PUEDEN AGREGAR DETALLES....)
 The team trained and tested 4 different models to evaluate the dataset, in addition to variations within some of the models.  The models were run on local systems as well as through Google's Collaboratory:
 1. SVM (Support Vector Machine) Model
 2. Logistic Regression
 3. Neural Network/Deep Learning Model
 4. Random Forest Model
-
+  
 #### 1) SVM
 We ran an SVM models with all 16 features, in two different variations: one with the StandardScaler for x, and one using the MinMax Scaler.  The LabelEncoder was used for y in both cases, with the following results:
 
@@ -111,10 +111,10 @@ At first it seemed that while the training score improved, the testing scrore on
     Training Data Score: 0.9957346048427642  
     Testing Data Score: 0.9388410451029047  
   
-  
+    
 ## Results
 After running the 4 models and the variations described above, we chose the Random Forest model with adjusted settings as the final model, given that it had produced by far the best results with the highest levels of accuracy.
-
-
+  
+  
 ## Copyright
 The original dataset was retrived from Kaggle and created by Farooq Ansari. As a team, we created our own machine learning model to analize the songs, and further analyzed the features for a breakdown by decade. The first image above was retrive from Luxemburg Times site on 06/23/2020.
