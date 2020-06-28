@@ -22,7 +22,7 @@ Original dataset available at: https://www.kaggle.com/theoverman/the-spotify-hit
 ## Project Scope
 The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web API, base on the tracks labeled `hit` or `flop` by the author, which can be used to make a classification model to predicts whether any given track would be a 'Hit' or not. 
 
-The collaboration team also used the data to do a retroactive analysis of features for songs from each decade (1960s - 2010s).
+The team also used the data to do a retroactive analysis of features for songs from each decade (1960s - 2010s).
 
 
 ## Metadata Summary
@@ -43,7 +43,7 @@ The dataset includes measurements for the following features, defined and measur
 11. tempo
 12. duration (in milliseconds)
 13. time signature
-14. target (a boolean variable describing whether the track ever appeared in the Billboard Weekly Hot-100 list)
+14. target (a boolean variable describing if the track ever appeared on Billboard's Weekly Hot-100 list)
 ```
 
 Two additional features were defined by Ansari and extracted from the data recieved by the API call for Audio Analysis of each particular track:
@@ -52,7 +52,11 @@ Two additional features were defined by Ansari and extracted from the data recie
 16. number of sections
 ```
 
-Further detail about each of the features and what they measure can be found on Kaggle (link to the dataset located above), and through Spotify's documentation: https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/.  Ansari's original cource code can be found at: https://github.com/fortytwo102/the-spotify-hit-predictor-dataset
+Further detail about each of the features and what they measure can be found on Kaggle (link to the dataset located above), and through Spotify's documentation: 
+https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/.  
+
+Ansari's original cource code can be found at: 
+https://github.com/fortytwo102/the-spotify-hit-predictor-dataset
 
 
 ## Methodology (CRIS, HEIDY -- SI PUEDEN AGREGAR DETALLES....)
@@ -62,17 +66,18 @@ The team trained and tested 4 different models to evaluate the dataset, in addit
 3. Neural Network/Deep Learning Model
 4. Random Forest Model
 
-#### 1) SVM
+### 1) SVM
 We ran an SVM models with all 16 features, in two different variations: one with the StandardScaler for x, and one using the MinMax Scaler.  The LabelEncoder was used for y in both cases, with the following results:
-    * StandardScaler: 
-        Training Data Score: 0.7257776768626942
-        Testing Data Score: 0.7308553079692517
-    * MinMaxScaler:
-        Training Data Score: 0.7256479288981154
-        Testing Data Score: 0.7306606986474652
+
+* StandardScaler: 
+    Training Data Score: 0.7257776768626942
+    Testing Data Score: 0.7308553079692517
+* MinMaxScaler:
+    Training Data Score: 0.7256479288981154
+    Testing Data Score: 0.7306606986474652
 
 
-#### 1) Logistic Regression
+### 2) Logistic Regression
 This was the worst performing model of the four. Similar to the SVM Model, we ran Logistic regression with all 16 features suing both Standar and MinMax Scaler variations:
 
 *  StandardScaler:
@@ -83,28 +88,28 @@ This was the worst performing model of the four. Similar to the SVM Model, we ra
     Testing Data Score: 0.7283253867860271
 
 
-#### 3) Neural Network/Deep Learning
-We originally designed the archetecture of our deep learnign model to have 4 layers, while measuring the loss and accuracy levels while training and testing the model.  In the process of training and testing the model, we discovered that the addition of the final layer was essentially overtraining the model, leading to decreased accuracy.  As such, we elimated the last layer from the final version of the model. The best variation model was with 500 epochs and a batch size of 2000.
+### 3) Neural Network/Deep Learning
+We originally designed the archetecture of our deep learning model to have 4 layers, while measuring the loss and accuracy levels while training and testing the model.  In the process of training and testing the model, we discovered that the addition of the final layer was essentially overtraining the model, leading to decreased accuracy.  As such, we elimated the last layer from the final version of the model. The best variation model was with 500 epochs and a batch size of 2000.
 
     TRAINING DATA --> Loss: 0.4263421893119812, Accuracy: 0.7969444394111633
     TESTING DATA --> Loss: 0.4867408275604248, Accuracy: 0.7762965559959412
 
 
-The initial test of the Neural Network , with all 16 features, was better performing than the SVM or Logistic Regression Models.  For this reason, we decided to run many variations to see if eliminating and one of the feature, or the less influential ones in combination, would improve the model's accuracy.  The results can be seen in the table below.
+The initial test of the Neural Network , with all 16 features, performed than the SVM or Logistic Regression Models.  For this reason, we decided to run sevveral variations to see if eliminating and one of the features, or some features in combination, would improve the model's accuracy.  The results can be seen in the table below.
 
     [INSERT TABLE]
 
 Overall, these tests showed that eliminating any features did not improve accuracy and the best results came from including all 16 features. 
 
 
-#### 4) Random Forest
-This was the best performing model, especially when run through Google Collab. 
+### 4) Random Forest
+One thing we were able to see immediately with this model is that no one feature seemed to have a particularly strong weight or influence on the overall results, and the individually, each feature was quite weak as a predictor of whether or not a song would be a hit.  However, with all the features included, this was actually the best performing model. 
 
 * via local 
     Training Data Score: 0.9993836971682507
     Testing Data Score: 0.7848593947650092
 
-At first it seemed that while the training score improved, the testing scrore only improved slightly over prior models.  We thought at first that this meant that we might be overtraining the model, or that the results reflected limits to the dataset itself and the data's abilty to actually predict hit songs. However, we decided to see if part of the reason for the results were due to the power of teh computers we were using to run the models.  To test this idea, we decided to run the same model through Google Collab, which did improve the result.  Lastly, the key difference in improving accuracy were final adjustments made to the number of trees (200), and the max depth (25).
+At first it seemed that while the training score improved, the testing scrore only improved slightly over prior models.  We thought at first that this meant that we might be overtraining the model, or that the results reflected limits to the dataset itself and the data's abilty to actually predict hit songs. However, we decided to see if part of the reason for the results were due to the power of the local computers we were using to run the models.  To test this idea, we decided to run the same model through Google Collab, which did improve the result.  Lastly, the key difference in improving accuracy for the last variation of the model were final adjustments made to the number of trees (200), and the max depth (25).
 
 * via Google Collab, with adjustments :
     Training Data Score: 0.9957346048427642
