@@ -12,24 +12,20 @@ Original dataset available at: https://www.kaggle.com/theoverman/the-spotify-hit
 * Heidy Guzman
   
   
-## Contents
-* original data
-* models (& variations) tested
-* deployment of the best model (Random Forest)
-* final prodect webpage
+## Contents inside this repository
+* Original data
+* Models (& variations) tested
+* Deployed program
   
   
 ## Project Scope
-The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web API, base on the tracks labeled `hit` or `flop` by the author, which can be used to make a classification model to predicts whether any given track would be a 'Hit' or not. 
-
-The team also used the data to do a retroactive analysis of features for songs from each decade (1960s - 2010s).
+The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web API, base on the tracks labeled `hit` or `flop` by the author, which can be used to make a classification model to predicts whether any given track would be a 'Hit' or not. Base on this the team used this data to do a retroactive analysis of features for songs from each decade (1960s - 2010s).
 
 
 ## Metadata Summary
 The original data, retrieved through Spotify's Web API, includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier for the track (uri).
 
 The dataset includes measurements for the following features, defined and measured by Spotify for each track:
-```
 1. danceability
 2. energy
 3. key
@@ -44,29 +40,31 @@ The dataset includes measurements for the following features, defined and measur
 12. duration (in milliseconds)
 13. time signature
 14. target (a boolean variable describing if the track ever appeared on Billboard's Weekly Hot-100 list)
-```
+
 
 Two additional features were defined by Ansari and extracted from the data recieved by the API call for Audio Analysis of each particular track:
-```
-15. chorus hit (an estimation of when the chorus of the track would first appear, i.e. "hit")
-16. number of sections
-```
 
-Further detail about each of the features and what they measure can be found on Kaggle (link to the dataset located above), and through Spotify's documentation: 
+15. chorus hit (an estimation of when the chorus of the track would first appear, i.e. "hit")
+16. sections (number of sections inside the song)
+
+
+Details about each of the features and what they measure can be found on Kaggle (link to the dataset located above), and through Spotify's documentation: 
 https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/.  
 
-Ansari's original cource code can be found at: 
+Ansari's original source code can be found at: 
 https://github.com/fortytwo102/the-spotify-hit-predictor-dataset
   
   
-## Methodology (CRIS, HEIDY -- SI PUEDEN AGREGAR DETALLES....)
-The team trained and tested 4 different models to evaluate the dataset, in addition to variations within some of the models.  The models were run on local systems as well as through Google's Collaboratory:
+## Methodology
+The team trained and tested 4 different models to evaluate the dataset, in addition to variations within some of the models.
 1. SVM (Support Vector Machine) Model
 2. Logistic Regression
 3. Neural Network/Deep Learning Model
 4. Random Forest Model
-  
-#### 1) SVM
+
+Note: The models were run in local servers and the ones with the best results were run through Google's Collaboratory to maximize their score.
+
+### 1) SVM
 We ran an SVM models with all 16 features, in two different variations: one with the StandardScaler for x, and one using the MinMax Scaler.  The LabelEncoder was used for y in both cases, with the following results:
 
 * StandardScaler:  
