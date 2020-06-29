@@ -6,10 +6,10 @@ Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-
   
  
 ## Project collaborators
-* Purvi P. Patel
-* Cristina Bardan
-* Grecia Villarreal
-* Heidy Guzman
+* [Purvi P. Patel](https://github.com/patelpurvip/)
+* [Cristina Bardan](https://github.com/cckuqui)
+* [Grecia Villarreal](https://github.com/greciavm)
+* [Heidy Guzman](https://github.com/heidyloreley)
   
   
 ## Contents inside this repository
