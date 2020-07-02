@@ -1,0 +1,10 @@
+background
+Photo: Aytac Unal/Anadolu Agency/Getty
+https://onezero.medium.com/how-spotifys-algorithm-knows-exactly-what-you-want-to-listen-to-4b6991462c5c
+
+
+color palette
+https://brandcolors.net/b/spotify
+
+green: 1db954  - antes 00539C
+black: 191414 - antes FFD662
