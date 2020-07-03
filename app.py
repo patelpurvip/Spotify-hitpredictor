@@ -13,14 +13,6 @@ def home():
 def home2():
     return render_template("index.html", item='home')
 
-#Route to get input data
-# @app.route('/', methods = ['POST'])
-# def input_data():
-#     track = request.form["song"]
-#     artist = request.form["artist"]
-#     return track, artist
-
-
 # Route for hit_flop
 @app.route('/hit_flop', methods = ['POST'])
 def hit_flop():
