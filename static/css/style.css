@@ -22,6 +22,7 @@ h1 {
     font-size: 50px;
 }
 
+
 .smaller-font {
     font-size: 25px;
 }
@@ -148,6 +149,16 @@ a:focus {
     color: #1db954;
 }
 
+.header .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 5px;
+    background: #eeeeee;
+}
+
+.header .dropdown-menu a.active {
+    color: #FFD662;
+}
 
 @media (min-width: 992px) {
     .header .navbar {

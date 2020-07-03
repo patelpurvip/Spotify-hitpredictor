@@ -9,7 +9,7 @@
     <meta content="Hit or Flop Spotify Predictor Website Template" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../img/favicon.ico" rel="icon">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
@@ -17,16 +17,13 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="../static/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <br>
-    <br>
-    <br>
     <div class="wrapper">
         <!-- Header Start -->
         <div class="header home">
@@ -40,7 +37,11 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="navbar navbar-expand-lg bg-light navbar-light">
-                            <div class="collapse navbar-collapse justify-content-between">
+                            <a href="#" class="navbar-brand">MENU</a>
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                                 <div class="navbar-nav ml-auto">
                                     <a href="/home" class="nav-item nav-link {{ 'active' if item == 'home' else ''}}">Home</a>
                                     <a href="/historical" class="nav-item nav-link {{ 'active' if item == 'historical' else ''}}">Historical Analysis</a>
@@ -76,9 +77,10 @@
         <!-- Footer End -->
 
     <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 
 </html>
