@@ -47,7 +47,7 @@ a:focus {
 .wrapper {
     position: relative;
     width: 100%;
-    max-width: 1400px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -89,7 +89,6 @@ a:focus {
 }
 
 .header.home {
-    /* margin-bottom: 45px; */
     background: linear-gradient(
         rgb(23, 141, 64, .5),
         rgba(23, 141, 64, .5), 
@@ -735,7 +734,7 @@ a:focus {
     bottom: 0;
     margin: 0 auto;
     /* margin-top: 15px; */
-    max-width: 1400px;
+    max-width: 90%;
     padding-top: 20px;
     background: #1db954;
     color: #ffffff;
