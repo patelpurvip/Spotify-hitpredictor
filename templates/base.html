@@ -17,7 +17,6 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
@@ -25,6 +24,9 @@
 </head>
 
 <body>
+    <br>
+    <br>
+    <br>
     <div class="wrapper">
         <!-- Header Start -->
         <div class="header home">
@@ -33,7 +35,7 @@
                 <div class="header-top row align-items-center">
                     <div class="col-lg-6">
                         <div class="brand">
-                            <a href="index.html"> Hit or Flop?
+                            <a href="index.html"> Spotify library: Hit or Flop?
                             </a>
                         </div>
                     </div>
@@ -56,58 +58,18 @@
                     </div>
                 </div>
                 <!-- Navigation bar End -->
-
-                <!-- Body Starts -->
-                <div class="hero row align-items-center">
-                    <!-- Explanation variables -->
-                    <div class="col-md-7">
-                        <h2><strong>{{song}}</strong></h2>
-                        <p>{{xdict}}</p>
-                    </div>
-                    <!-- Hit or Flop Calculator -->
-                    <div class="col-md-5">
-                        <div class="form">
-                            <h3 style="text-align: center"> PICK YOUR SONG!</h3>
-
-
-                            <form method="POST" action="/hit_flop">
-                                <input class="form-control" id="song" name="song" type="text" placeholder="Song Name">
-                                <input class="form-control" id="artist" name="artist" type="text" placeholder="Artist Name">
-                                <button class="btn btn-block" name="Button" type="submit">Hit or Flop?</button>
-                            </form>
-                            <br>
-                            <!-- Text area to display hit result and probability  -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 id="prediction-result" class="card-title">
-                                        {{result}}
-                                    </h5>
-                                    <p id="prediction-score" class="card-text">
-                                        {{score}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Body End -->
+                
+                {% block main_panel %}{% endblock %}
+                
             </div>
         </div>
         <!-- Header End -->
-
+    </div>
+</body>
 
         <!-- Footer Start -->
-        <div class="footer">
-            <div class="container footer-menu">
-                <div class="f-menu">
-                    <a href="">Terms of use</a>
-                    <a href="">Privacy policy</a>
-                    <a href="">Cookies</a>
-                    <a href="">Help & FQAs</a>
-                    <a href="">Contact us</a>
-                </div>
-            </div>
-            <div class="container copyright">
+        <div class="footer fixed-bottom">
+            <div class="copyright">
                 <div class="row">
                     <div class="col-md-6">
                         <p>&copy; <a href="https://htmlcodex.com">HTML Codex</a>, All Right Reserved.</p>
@@ -120,21 +82,16 @@
         </div>
         <!-- Footer End -->
 
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    </div>
+        <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
+    
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 
-    <!-- Template Javascript -->
-    <!-- <script src="../static/js/main.js"></script> -->
 
-</body>
 
 </html>

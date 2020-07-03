@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main_panel %}
+    <!-- Body Starts -->
+    <div class="hero row align-items-center">
+        <!-- Explanation variables -->
+        <div class="col-md-7">
+            <h2><strong>{{song}}</strong></h2>
+            <p>{{xdict}}</p>
+        </div>
+        <!-- Hit or Flop Calculator -->
+        <div class="col-md-5">
+            <div class="form">
+                <h3 style="text-align: center"> PICK YOUR SONG!</h3>
+
+
+                <form method="POST" action="/hit_flop">
+                    <input class="form-control" id="song" name="song" type="text" placeholder="Song Name">
+                    <input class="form-control" id="artist" name="artist" type="text" placeholder="Artist Name">
+                    <button class="btn btn-block" name="Button" type="submit">Hit or Flop?</button>
+                </form>
+                <br>
+                <!-- Text area to display hit result and probability  -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 id="prediction-result" class="card-title">
+                            {{result}}
+                        </h5>
+                        <p id="prediction-score" class="card-text">
+                            {{score}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Body End -->
+{% endblock %}

@@ -3,7 +3,7 @@
 /*******************************/
 body {
     color: #666666;
-    background: #ffffff;
+    background: #000000;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -39,7 +39,7 @@ a:focus {
     width: 100%;
     max-width: 1366px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #000000;
 }
 
 .back-to-top {
@@ -80,7 +80,7 @@ a:focus {
 }
 
 .header.home {
-    margin-bottom: 45px;
+    /* margin-bottom: 45px; */
     background: linear-gradient(
         rgb(23, 141, 64),
         rgba(23, 141, 64, .5), 
@@ -108,7 +108,7 @@ a:focus {
 
 .header .brand a {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 500;
 }
 
@@ -698,8 +698,11 @@ a:focus {
 /*******************************/
 .footer {
     position: relative;
-    margin-top: 45px;
-    padding-top: 90px;
+    bottom: 0;
+    margin: 0 auto;
+    /* margin-top: 15px; */
+    max-width: 1366px;
+    padding-top: 20px;
     background: #1db954;
     color: #ffffff;
     font-weight: 300;
@@ -724,36 +727,6 @@ a:focus {
     letter-spacing: 1px;
 }
 
-.footer .footer-contact p {
-    font-size: 14px;
-}
-
-.footer .footer-contact p i {
-    width: 25px;
-}
-
-.footer .footer-social {
-    position: relative;
-    margin-top: 25px;
-}
-
-.footer .footer-social a {
-    display: inline-block;
-}
-
-.footer .footer-social a i {
-    margin-right: 15px;
-    font-size: 25px;
-    color: #ffffff;
-}
-
-.footer .footer-social a:last-child i {
-    margin: 0;
-}
-
-.footer .footer-social a:hover i {
-    color: #191414;
-}
 
 .footer .footer-link a {
     display: block;
@@ -831,7 +804,7 @@ a:focus {
 
 
 .footer .copyright {
-    padding: 30px 15px;
+    padding: 3px 15px;
     border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
