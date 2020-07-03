@@ -61,35 +61,47 @@ def hit_flop(track, artist):
             chorus_hit,
             count_sections]]
         
-        
-        
-        
-        key = ''
-        mode = ''
-
-        if f['mode'] == 1:
-            mode = 'Major'
+        # Arrange data to fill dictionary for DataFrame
+        key = ''      
+        if f['key'] == 1:
+            key = 'Major'
         else:
-            mode = 'Minor'
+            key = 'Minor'
 
-        if f['key']
+        mode = ''
+        pitch_class = {-1:'No key was detected',
+            0:'C',
+            1:'C♯ or D♭',
+            2:'D',
+            3:'D♯ or E♭',
+            4:'E',
+            5:'F',
+            6:'F♯ or G♭',
+            7:'G',
+            8:'G♯ or A♭',
+            9:'A',
+            10:'A♯ or B♭',
+            11:'B'}
+        if f['mode'] in pitch_class:
+            mode = pitch_class[f['mode']]
+    
 
-        # Create dataframe of data
+        # Create DataFrame of data
         table = pd.DataFrame({
             'Danceability': [f['danceability']],
             'Energy': [f['energy']],
             'Key': [key],
-            'Loudness': [f['loudness']],
+            'Loudness (db)': [f['loudness']],
             'Mode': [mode],
             'Speechiness': [f['speechiness']],
             'Acousticness': [f['acousticness']],
             'Instrumentalness': [f['instrumentalness']],
             'Liveness': [f['liveness']],
             'Valence': [f['valence']],
-            'Tempo': [f['tempo']],
-            'Duration in seconds': [f['duration_ms']/1000],
+            'Tempo (beats per minute (BPM))': [f['tempo']],
+            'Duration (seconds)': [f['duration_ms']/1000],
             'Time Signature': [f['time_signature']],
-            'Aprox time the chorus "hit"': [chorus_hit],
+            'Aprox timestamp the chorus "hit" (seconds)': [chorus_hit],
             'Sections count': [count_sections]
             })
         ttable = table.T

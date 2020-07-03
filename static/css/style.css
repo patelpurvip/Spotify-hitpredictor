@@ -269,7 +269,6 @@ a:focus {
 }
 
 .header .hero p {
-    margin: 10px 0 20px 0;
     font-size: 22px;
     color: #ffffff;
 }
@@ -461,7 +460,6 @@ a:focus {
 }
 
 .section-header p {
-    margin-bottom: 10px;
     font-size: 20px;
 }
 
@@ -711,9 +709,13 @@ a:focus {
     margin: 10px 0 15px 0;
 }
 
-/* /* .table { */
-
-/* } */ 
+.table {
+    text-align: center;
+    table-layout: auto;
+    opacity: 0.75;
+    width: 70%;
+    margin-left: 90px;
+} 
 
 .single .table,
 .single .list-group {
