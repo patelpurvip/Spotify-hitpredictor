@@ -28,6 +28,7 @@ def home2():
 def hit_flop():
     track = request.form["song"]
     artist = request.form["artist"]
+    print(track, artist)
     
     try:
         response = spotify.hit_flop(track, artist)
@@ -35,7 +36,7 @@ def hit_flop():
         if len(response) == 3:
             hit_predict = response[0]
             hit_score = response[1]
-            xdict = response[2]
+            feature_table = response[2]
             track = f'{track} by {artist}'
 
             if hit_predict[0] == 1:
@@ -46,7 +47,7 @@ def hit_flop():
                 result = 'It could be a flop'
                 score = f"There's a {round(hit_score[0][0]*100,0)}% chance it'll be a flop =("
             
-            return render_template("index.html", result=result, score=score, xdict=xdict, song=track)
+            return render_template("index.html", result=result, score=score, feature_table=feature_table, song=track)
         else:
             error = response[0]
             return render_template("index.html", score=error, item='home')

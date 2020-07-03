@@ -2,6 +2,7 @@ from pickle import load
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
+import pandas as pd
 import os
 
 # # test data
@@ -26,7 +27,8 @@ def hit_flop(track, artist):
     # Call song
 
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=client_id, client_secret=client_secret))
-    
+    print(spotify)
+
     try:
         results = spotify.search(q='track:' + track, type='track')
         
@@ -47,8 +49,7 @@ def hit_flop(track, artist):
         f = audio_features[0]
 
         # Arrange data to load to model
-        x = [[
-            f['danceability'],
+        x = [[f['danceability'],
             f['energy'],
             f['key'],
             f['loudness'],
@@ -64,24 +65,28 @@ def hit_flop(track, artist):
             chorus_hit,
             count_sections]]
         
-        # Create dictionary of data
-        x_dic = {
-            'danceability': f['danceability'],
-            'energy': f['energy'],
-            'key': f['key'],
-            'loudness': f['loudness'],
-            'mode': f['mode'],
-            'speechiness': f['speechiness'],
-            'acousticness': f['acousticness'],
-            'instrumentalness': f['instrumentalness'],
-            'liveness': f['liveness'],
-            'valence': f['valence'],
-            'tempo': f['tempo'],
-            'duration_ms': f['duration_ms'],
-            'time_signature': f['time_signature'],
-            'chorus_hit': chorus_hit,
-            'count_sections': count_sections
-            }
+        # Create dataframe of data
+        table = pd.DataFrame({
+            'danceability': [f['danceability']],
+            'energy': [f['energy']],
+            'key': [f['key']],
+            'loudness': [f['loudness']],
+            'mode': [f['mode']],
+            'speechiness': [f['speechiness']],
+            'acousticness': [f['acousticness']],
+            'instrumentalness': [f['instrumentalness']],
+            'liveness': [f['liveness']],
+            'valence': [f['valence']],
+            'tempo': [f['tempo']],
+            'duration_ms': [f['duration_ms']],
+            'time_signature': [f['time_signature']],
+            'chorus_hit': [chorus_hit],
+            'count_sections': [count_sections]
+            })
+        ttable = table.T
+        feature_table = ttable.to_html(classes="table table-hover table-success table-striped", 
+            justify='center',
+            header=False)
 
         # Scaling data
         x_scaled = scaler.transform(x)
@@ -90,8 +95,8 @@ def hit_flop(track, artist):
         hit_predict = model.predict(x_scaled)
         hit_score = model.predict_proba(x_scaled)
 
-        return [hit_predict, hit_score, x_dic]
+        return [hit_predict, hit_score, feature_table]
     
     except:
         error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
-        return [error] 
+        return [error]
