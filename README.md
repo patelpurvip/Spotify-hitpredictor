@@ -23,7 +23,7 @@ The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web
 
 
 ## Metadata Summary
-The original data, retrieved through Spotify's Web API, includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier for the track (uri).
+The original data, retrieved through Spotify's Web API (accesed though the Python library Spotipy), includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier for the track (uri).
 
 The dataset includes measurements for the following features, defined and measured by Spotify for each track:
 
@@ -173,7 +173,7 @@ Training Data Score: 0.9993836971682507
 Testing Data Score: 0.7883623625571665
 ```
 
-We saw that the adjustments we were making resulted in only slight improvements or variations in the results of each model. This led us to believe that any real improvement to the results required taking a closer look at the data we were using to train the model. We theorized that, since music tastes change relatively less from one decade to the next, but is much more pronouced over 30-40 years, perhaps limiting the data to a block of twenty years would improve the accuracy.  We decided to use the songs from the 2000s since that is the most recent period of 20 years, and thus might more accurately predict what would be considered a hit today. With these adjustments, the accuracy of the model did in fact improve. The final adjustments made to the model, which maximized the results, were number of trees (200), and the max depth (25).
+We saw that the adjustments we were making resulted in only slight improvements or variations in the results of each model. This led us to believe that any real improvement to the results required taking a closer look at the data we were using to train the model. We theorized that, since music tastes change relatively less from one decade to the next, but is much more pronouced over 30-40 years, perhaps limiting the data to a block of twenty years would improve the accuracy. We decided to use the songs from the 2000s since that is the most recent period of 20 years, and thus might more accurately predict what would be considered a hit today. With these adjustments, the accuracy of the model did in fact improve. The final adjustments made to the model, which maximized the results, were number of trees (200), and the max depth (25).
 
 ```  
 Training Data Score: 0.8029484748840332
@@ -182,8 +182,20 @@ Testing Data Score: 0.7852381467819214
   
     
 ## Results
-After running the 4 models and the variations described above, we chose the Random Forest model with adjusted settings as the final model, given that it had produced by far the best results with the highest levels of accuracy.
-  
-  
+After running the 4 models and the variations described above, we chose the Random Forest model with adjusted settings as the final model, given that it had produced the best results with the highest levels of accuracy.
+
+
+## Deployment of the Model & Analysis of Historical "hit" data
+We designed a public webpage for final deployment of the machine learning model, found [here](PLACEHOLDER).
+
+Visitors to the site can input a recently released song (or their favorite past song) to see how the model would determine whether it might be a "hit" or not. A second page provides interactives graphs to analyze the preferences in different song features accross all decades in the full dataset (1960s-2010s), and provides a bit more background as to how each feature is defined.
+
+With graph analysis, we noticed consistency in some audio features for hits throughout the decades, meaning that hits have higher quantities of these features and they seems to retain the same influence as to whether a song is popular.  These feature include: danceability, energy, loudness and valence. Other features have increasingly fluctuated in their importance from one decade to the next, characteristics like chorus hits, duration, liveness, mode, sections and speechiness.  That is to say that maybe in the 60's these features were more prominent in hits of that era, but in recent decades songs with higher levels of these features are more likely to be flops.
+
+
 ## Copyright
-The original dataset was retrived from Kaggle and created by Farooq Ansari. As a team, we created our own machine learning model to analize the songs, and further analyzed the features for a breakdown by decade. The first image above was retrive from Luxemburg Times site on 06/23/2020.
+* The original dataset was retrived from Kaggle and created by Farooq Ansari. As a team, we created our own machine learning model to analize the songs, and further analyzed the features for a breakdown by decade. 
+* The template for the website deploying the model was designed by [HTML Codex](https://htmlcodex.com/)
+* Graphcs were generated through [Tableau](https://public.tableau.com/profile/grecia.villarreal#!/vizhome/Spotify_15936539551520/Spotify?publish=yes
+)
+* The first image above was retrive from Luxemburg Times site on 06/23/2020.
