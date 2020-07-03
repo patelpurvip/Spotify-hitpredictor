@@ -1,0 +1,19 @@
+Template Name: CleanMe - Cleaning Company Website Template
+Author Name: HTML Codex
+Author Website: https://htmlcodex.com
+About HTML Codex: HTML Codex is one of the top publishers of HTML templates, HTML landing pages, HTML email templates and HTML snippets in the world. Our every item is 100% FREE and always will be for your personal and commercial uses. You don�t need to have any registered account on HTML Codex to download any items. Read more at https://htmlcodex.com/about-us
+
+
+
+0 	C 
+1 	C♯ or D♭
+2 	D
+3 	D♯ or E♭
+4 	E
+5 	F
+6 	F♯ or G♭
+7 	G
+8 	G♯ or A♭ 	
+9 	A
+10  A♯ or B♭
+11  B

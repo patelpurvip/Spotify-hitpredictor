@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 import pandas as pd
 import os
 
-# # test data
-# track = "black parade"
-# artist = "Beyoncé"
-
 def hit_flop(track, artist):
 
     # Load model
@@ -65,23 +61,36 @@ def hit_flop(track, artist):
             chorus_hit,
             count_sections]]
         
+        
+        
+        
+        key = ''
+        mode = ''
+
+        if f['mode'] == 1:
+            mode = 'Major'
+        else:
+            mode = 'Minor'
+
+        if f['key']
+
         # Create dataframe of data
         table = pd.DataFrame({
-            'danceability': [f['danceability']],
-            'energy': [f['energy']],
-            'key': [f['key']],
-            'loudness': [f['loudness']],
-            'mode': [f['mode']],
-            'speechiness': [f['speechiness']],
-            'acousticness': [f['acousticness']],
-            'instrumentalness': [f['instrumentalness']],
-            'liveness': [f['liveness']],
-            'valence': [f['valence']],
-            'tempo': [f['tempo']],
-            'duration_ms': [f['duration_ms']],
-            'time_signature': [f['time_signature']],
-            'chorus_hit': [chorus_hit],
-            'count_sections': [count_sections]
+            'Danceability': [f['danceability']],
+            'Energy': [f['energy']],
+            'Key': [key],
+            'Loudness': [f['loudness']],
+            'Mode': [mode],
+            'Speechiness': [f['speechiness']],
+            'Acousticness': [f['acousticness']],
+            'Instrumentalness': [f['instrumentalness']],
+            'Liveness': [f['liveness']],
+            'Valence': [f['valence']],
+            'Tempo': [f['tempo']],
+            'Duration in seconds': [f['duration_ms']/1000],
+            'Time Signature': [f['time_signature']],
+            'Aprox time the chorus "hit"': [chorus_hit],
+            'Sections count': [count_sections]
             })
         ttable = table.T
         feature_table = ttable.to_html(classes="table table-hover table-success table-striped", 

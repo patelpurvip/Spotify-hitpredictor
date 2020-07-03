@@ -1,7 +1,5 @@
 from flask import Flask, render_template, redirect, jsonify, request
 import spotify
-import logging
-import sys
 
 # Create an instance of Flask
 app = Flask(__name__)
