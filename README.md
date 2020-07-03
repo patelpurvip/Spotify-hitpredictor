@@ -167,7 +167,6 @@ In this case, the best variation model was with Standar Scaler normalization. Wi
 
 Individually, each feature was quite weak as a predictor of whether or not a song would be a hit. However, with all the features included, this was actually the best performing model.
 
-* via local
 ```  
 Training Data Score: 0.9993836971682507
 Testing Data Score: 0.7883623625571665
