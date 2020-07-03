@@ -9,7 +9,11 @@ app = Flask(__name__)
 # Route to render index.html
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", item='home')
+
+@app.route("/home")
+def home2():
+    return render_template("index.html", item='home')
 
 #Route to get input data
 # @app.route('/', methods = ['POST'])
@@ -45,7 +49,7 @@ def hit_flop():
             return render_template("index.html", result=result, score=score, xdict=xdict, song=track)
         else:
             error = response[0]
-            return render_template("index.html", score=error)
+            return render_template("index.html", score=error, item='home')
     except:
         print('=(')
 
@@ -53,11 +57,11 @@ def hit_flop():
 
 @app.route("/about/")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", item='about')
 
-@app.route("/historical")
+@app.route("/historical/")
 def historical():
-    return render_template("historical.html")
+    return render_template("historical.html", item='historical')
 
 if __name__ == "__main__":
     app.run(debug=True)

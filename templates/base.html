@@ -34,24 +34,17 @@
                 <!-- Navigation bar Start -->
                 <div class="header-top row align-items-center">
                     <div class="col-lg-6">
-                        <div class="brand">
-                            <a href="index.html"> Spotify library: Hit or Flop?
-                            </a>
-                        </div>
+                        <h1>
+                            <strong><a href="home">Hit or Flop?<p class='smaller-font'>from the Spotify library</p></a></strong>
+                        </h1>
                     </div>
                     <div class="col-lg-6">
                         <div class="navbar navbar-expand-lg bg-light navbar-light">
-                            <a href="#" class="navbar-brand">MENU</a>
-                            <button type="button" class="navbar-toggler" data-toggle="collapse"
-                                data-target="#navbarCollapse">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="collapse navbar-collapse justify-content-between">
                                 <div class="navbar-nav ml-auto">
-                                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                                    <a href="historical.html" class="nav-item nav-link">Historical Analysis</a>
-                                    <a href="about.html" class="nav-item nav-link">About</a>
+                                    <a href="/home" class="nav-item nav-link {{ 'active' if item == 'home' else ''}}">Home</a>
+                                    <a href="/historical" class="nav-item nav-link {{ 'active' if item == 'historical' else ''}}">Historical Analysis</a>
+                                    <a href="/about" class="nav-item nav-link {{ 'active' if item == 'about' else ''}}">About</a>
                                 </div>
                             </div>
                         </div>
@@ -72,26 +65,20 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; <a href="https://htmlcodex.com">HTML Codex</a>, All Right Reserved.</p>
+                        <p>&copy; <a href="https://htmlcodex.com">HTML Codex, All Right Reserved.</a></p>
                     </div>
                     <div class="col-md-6">
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p><a href="https://htmlcodex.com">Designed by HTML Codex</a></p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Footer End -->
 
-        <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
-    
-
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-
-
 
 </html>

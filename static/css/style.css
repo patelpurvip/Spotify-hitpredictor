@@ -3,7 +3,7 @@
 /*******************************/
 body {
     color: #666666;
-    background: #000000;
+    background: #383838;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
@@ -14,18 +14,27 @@ h3,
 h4,
 h5, 
 h6 {
-    font-weight: 100;
+    font-weight: 500;
+    padding-top: 15px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.smaller-font {
+    font-size: 25px;
 }
 
 a {
-    color: #454545;
+    color: #ffffff;
     transition: .3s;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: #333333;
+    color: #1db954;
     outline: none;
     text-decoration: none;
 }
@@ -37,9 +46,8 @@ a:focus {
 .wrapper {
     position: relative;
     width: 100%;
-    max-width: 1366px;
+    max-width: 1400px;
     margin: 0 auto;
-    background: #000000;
 }
 
 .back-to-top {
@@ -82,9 +90,9 @@ a:focus {
 .header.home {
     /* margin-bottom: 45px; */
     background: linear-gradient(
-        rgb(23, 141, 64),
+        rgb(23, 141, 64, .5),
         rgba(23, 141, 64, .5), 
-        rgba(23, 141, 64, 1)
+        rgba(23, 141, 64, .5)
         ), url(https://www.therobotreport.com/wp-content/uploads/2019/12/Home-Background.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -137,7 +145,7 @@ a:focus {
 
 .header .topbar-col a i {
     margin-right: 10px;
-    color: #191414;
+    color: #1db954;
 }
 
 
@@ -155,13 +163,15 @@ a:focus {
         position: relative;
         padding: 8px 10px;
         color: #ffffff;
-        font-size: 16px;
+        font-size: 25px;
+        font-weight: 500px;
         z-index: 1;
     }
     
     .header .navbar-light a.nav-link:hover,
     .header .navbar-light a.nav-link.active {
-        color: #191414;
+        color: #000000;
+        font-weight: 500px;
     }
 }
 
@@ -204,7 +214,6 @@ a:focus {
     margin-left: 15px;
     padding: 12px 20px 10px 20px;
     font-size: 13px;
-    text-transform: uppercase;
     color: #1db954;
     border: none;
     border-radius: 5px;
@@ -245,7 +254,7 @@ a:focus {
 }
 
 .header .hero h2 span {
-    color: #191414;
+    color: #1a1a1ad3;
 }
 
 .header .hero p {
@@ -258,7 +267,6 @@ a:focus {
     position: relative;
     padding: 15px 30px;
     font-size: 16px;
-    text-transform: uppercase;
     color: #1db954;
     border: none;
     border-radius: 5px;
@@ -274,7 +282,7 @@ a:focus {
 .header .hero .form {
     padding: 30px;
     border: 1px solid rgba(25, 20, 20, .4);
-    background: rgba(25, 20, 20, .3);
+    background: rgba(49, 49, 49, 0.7);
     border-radius: 5px;
 }
 
@@ -290,8 +298,8 @@ a:focus {
     margin-bottom: 15px;
     height: 45px;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, .3);
-    background: rgba(255, 255, 255, .2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .header .hero .form .card {
@@ -311,13 +319,16 @@ a:focus {
     text-align: center;
 }
 
-/* .header .hero .form textarea {
-    height: 75px;
-} */
+.form-control {
+    color: #ffffff
+}
 
-.header .hero .form select,
-.header .hero .form input::placeholder,
-.header .hero .form textarea::placeholder {
+.form select[type=text],
+.form input[type=text],
+.form textarea[type=text],
+.form select::placeholder,
+.form input::placeholder,
+.form textarea::placeholder {
     color: #ffffff;
 }
 
@@ -329,11 +340,10 @@ a:focus {
     position: relative;
     padding: 10px 35px;
     font-size: 16px;
-    text-transform: uppercase;
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    background: #191414;
+    background: #262f26;
     transition: .3s;
 }
 
@@ -354,19 +364,26 @@ a:focus {
 /*******************************/
 .page-header {
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 0px;
     padding: 90px 0;
     text-align: center;
-    /* background: #FFD662; */
-    background: rgba(25, 20, 20, .9);
+    background: rgba(49, 49, 49, 0.7);
 }
 
 .page-header h2 {
-    color: #ffffff;
-    font-size: 60px;
-    font-weight: 100;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 15px;
+    color: #1db954;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.page-header h3 {
+    /* text-transform: uppercase; */
+    /* margin-bottom: 15px; */
+    color: #f3fff7;
+    font-size: 30px;
+    font-weight: 300;
 }
 
 .page-header a {
@@ -667,7 +684,7 @@ a:focus {
 .single {
     position: relative;
     width: 100%;
-    padding: 45px 0 65px 0;
+    padding: 20px 0 20px 0;
 }
 
 .single h1,
@@ -701,7 +718,7 @@ a:focus {
     bottom: 0;
     margin: 0 auto;
     /* margin-top: 15px; */
-    max-width: 1366px;
+    max-width: 1400px;
     padding-top: 20px;
     background: #1db954;
     color: #ffffff;
