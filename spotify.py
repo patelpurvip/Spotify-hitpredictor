@@ -4,9 +4,9 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 import os
 
-# test data
-track = "black parade"
-artist = "Beyoncé"
+# # test data
+# track = "black parade"
+# artist = "Beyoncé"
 
 def hit_flop(track, artist):
 

@@ -61,9 +61,8 @@
                 <div class="hero row align-items-center">
                     <!-- Explanation variables -->
                     <div class="col-md-7">
-                        <h2>Best & Trusted</h2>
-                        <h2><span>Hit</span> Forecaster</h2>
-                        <p>Lorem ipsum dolor sit amet elit pretium facilisis ornare</p>
+                        <h2><strong>{{song}}</strong></h2>
+                        <p>{{xdict}}</p>
                     </div>
                     <!-- Hit or Flop Calculator -->
                     <div class="col-md-5">
@@ -71,17 +70,21 @@
                             <h3 style="text-align: center"> PICK YOUR SONG!</h3>
 
 
-                            <form method="POST">
-                                <input class="form-control" id="song" name="song" type="submit" placeholder="Song Name">
-                                <input class="form-control" id="artist" name="artist" type="submit" placeholder="Artist Name">
-                                <button id="filter-btn" class="btn btn-block">Hit or Flop?</button>
-                                <p></p>
+                            <form method="POST" action="/hit_flop">
+                                <input class="form-control" id="song" name="song" type="text" placeholder="Song Name">
+                                <input class="form-control" id="artist" name="artist" type="text" placeholder="Artist Name">
+                                <button class="btn btn-block" name="Button" type="submit">Hit or Flop?</button>
                             </form>
+                            <br>
                             <!-- Text area to display hit result and probability  -->
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 id="prediction-result" class="card-title"></h5>
-                                    <p id="prediction-score" class="card-text"></p>
+                                    <h5 id="prediction-result" class="card-title">
+                                        {{result}}
+                                    </h5>
+                                    <p id="prediction-score" class="card-text">
+                                        {{score}}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +133,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../static/js/main.js"></script>
+    <!-- <script src="../static/js/main.js"></script> -->
 
 </body>
 

@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect
-from flask_pymongo import PyMongo
 import spotify
 
 # Create an instance of Flask
@@ -16,7 +15,7 @@ def hit_flop():
     track = track
     artist = artist
     hit_predict, hit_score = spotify.hit_flop(track, artist)
-    return redirect("/", hit_predict=hit_predict, hit_predict=hit_predict)
+    return redirect("/", hit_predict=hit_predict)
 
 @app.route("/about/")
 def about():
