@@ -43,6 +43,7 @@ def hit_flop():
             error = response[0]
             return render_template("index.html", score=error, item='home')
     except Exception as inst:
+        print("#################################################")
         print(type(inst))    # the exception instance
         print(inst.args)     # arguments stored in .args
         print(inst)          # __str__ allows args to be printed directly,
