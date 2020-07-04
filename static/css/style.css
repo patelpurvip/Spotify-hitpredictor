@@ -2,7 +2,7 @@
 /********* General CSS *********/
 /*******************************/
 body {
-    color: #666666;
+    color: #ffffff;
     background: #383838;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -501,7 +501,7 @@ a:focus {
 
 .about .about-text h2 {
     position: relative;
-    color: #1db954;
+    color: #ffffff;
     font-size: 50px;
     margin-bottom: 15px;
 }
@@ -513,13 +513,14 @@ a:focus {
 .about .about-text p {
     font-size: 16px;
     margin-bottom: 30px;
+    color: #ffffff;
 }
 
 .about .about-text a.btn {
     padding: 15px 35px;
     font-size: 16px;
     text-transform: uppercase;
-    color: #000000;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     background: #191414;
@@ -615,20 +616,12 @@ a:focus {
     transition: .3s;
 }
 
-.team .team-social a.social-tw {
-    background: #00acee;
-}
-
-.team .team-social a.social-fb {
-    background: #3b5998;
-}
-
 .team .team-social a.social-li {
     background: #0e76a8;
 }
 
-.team .team-social a.social-in {
-    background: #3f729b;
+.team .team-social a.social-gh {
+    background: #3f3c3c;
 }
 
 .team .team-social a.social-yt {
@@ -702,7 +695,9 @@ a:focus {
 .single h5,
 .single h6 {
     font-weight: 400;
+    color: #ffffff;
 }
+
 
 .single img {
     margin: 10px 0 15px 0;
@@ -725,6 +720,21 @@ a:focus {
     font-weight: 100;
 }
 
+.single .card {
+    position: relative;
+    margin-bottom: 0px;
+    padding: 20px 0;
+    text-align: justify;
+    background: rgba(49, 49, 49, 0.5);
+    /* rgba(29, 185, 84, 0.6); */
+}
+.single .card ol {
+    text-align: left;
+}
+
+.single .card ol li {
+    margin-left: 100px;
+}
 
 /*******************************/
 /********* Footer CSS **********/
