@@ -22,6 +22,14 @@ h1 {
     font-size: 50px;
 }
 
+h5{
+    font-size: 15px;
+}
+
+p {
+    text-shadow: 0 0 .5px #000000;
+    color: white;
+}
 
 .smaller-font {
     font-size: 25px;
@@ -316,7 +324,7 @@ a:focus {
 }
 
 .header .hero .form .card .card-title {
-    font-size: 40px;
+    font-size: 35px;
     color: #000000;
     text-align: center;
     font-weight: 800;
@@ -494,15 +502,24 @@ a:focus {
     padding: 45px 0;
 }
 
-.about .about-img img {
-    width: 100%;
+img {
+    width: 30%;
     border-radius: 5px;
+    /* float: left; */
+    padding: 1%;
+}
+
+.about-card {
+    position: relative;
+    text-align: justify;
+    background: rgba(49, 49, 49, 0.7);
+    padding: 5% 5% 5% 5%;
 }
 
 .about .about-text h2 {
     position: relative;
     color: #ffffff;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 15px;
 }
 
@@ -511,8 +528,8 @@ a:focus {
 }
 
 .about .about-text p {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 0px;
     color: #ffffff;
 }
 
@@ -569,14 +586,14 @@ a:focus {
     padding: 150px 15px 30px 15px;
     margin-top: -130px;
     text-align: center;
-    background: #ffffff;
+    background: #ecffe1;
     border: 1px solid #eeeeee;
     transition: .3s;
 }
 
 .team .team-text:hover {
-    background: #191414;
-    border: 1px solid #191414;
+    background: #2c362a;
+    border: 1px solid #060a05;
 }
 
 .team .team-text h2 {
@@ -590,6 +607,7 @@ a:focus {
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 300;
+    color: #147235;
 }
 
 .team .team-social {
@@ -708,7 +726,8 @@ a:focus {
     table-layout: auto;
     opacity: 0.75;
     width: 70%;
-    margin-left: 90px;
+    margin-left: 80px;
+    font-size: 15px;
 } 
 
 .single .table,
@@ -743,9 +762,7 @@ a:focus {
     position: relative;
     bottom: 0;
     margin: 0 auto;
-    /* margin-top: 15px; */
     max-width: 90%;
-    padding-top: 20px;
     background: #1db954;
     color: #ffffff;
     font-weight: 300;
