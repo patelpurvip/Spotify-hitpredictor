@@ -22,6 +22,7 @@ def hit_flop():
     
     try:
         response = spotify.hit_flop(track, artist)
+        print(response)
         # hit_predict, hit_score = spotify.hit_flop(track, artist)
         if len(response) == 3:
             hit_predict = response[0]
