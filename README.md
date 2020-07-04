@@ -176,11 +176,11 @@ Testing Data Score: 0.7883623625571665
 We saw that the adjustments we were making resulted in only slight improvements or variations in the results of each model. This led us to believe that any real improvement to the results required taking a closer look at the data we were using to train the model. We theorized that, since music tastes change relatively less from one decade to the next, but is much more pronouced over 30-40 years, perhaps limiting the data to a block of twenty years would improve the accuracy. We decided to use the songs from the 2000s since that is the most recent period of 20 years, and thus might more accurately predict what would be considered a hit today. With these adjustments, the accuracy of the model did in fact improve. The final adjustments made to the model, which maximized the results, were number of trees (200), and the max depth (25).
 
 ```  
-Training Data Score: 0.8029484748840332
-Testing Data Score: 0.7852381467819214
+Train score: 0.9967398391653989
+Test score: 0.8464797913950456
 ```
   
-    
+
 ## Results
 After running the 4 models and the variations described above, we chose the Random Forest model with adjusted settings as the final model, given that it had produced the best results with the highest levels of accuracy.
 
