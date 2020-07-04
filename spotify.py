@@ -105,8 +105,8 @@ def hit_flop(track, artist):
             header=False)
 
         # Load model
-        model = load('model.pkl')
-        scaler = load('scaler.pkl')
+        model = load(open('model.pkl', 'rb'))
+        scaler = load(open('scaler.pkl', 'rb'))
 
         # Scaling data
         x_scaled = scaler.transform(x)
