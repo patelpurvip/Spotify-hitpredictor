@@ -1,4 +1,5 @@
 *.csv
 *.ipynb
-Models/
-Original_data/
+backend/Models/
+backend/Original_data/
+backend/
