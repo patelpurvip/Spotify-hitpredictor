@@ -7,10 +7,6 @@ import os
 
 def hit_flop(track, artist):
 
-    # Load model
-    model = load(open('model.pkl', 'rb'))
-    scaler = load(open('scaler.pkl', 'rb'))
-
     # Load keys
     load_dotenv()
     client_id = os.getenv("SPOTIPY_CLIENT_ID")
@@ -112,12 +108,18 @@ def hit_flop(track, artist):
             justify='center',
             header=False)
 
+        # Load model
+        model = load(open('model.pkl', 'rb'))
+        scaler = load(open('scaler.pkl', 'rb'))
+
         # Scaling data
         x_scaled = scaler.transform(x)
 
         # Running model
-        hit_predict = model.predict(x_scaled)
-        hit_score = model.predict_proba(x_scaled)
+        hit_predict = ''
+        # model.predict(x_scaled)
+        hit_score = ''
+        # model.predict_proba(x_scaled)
 
         return [hit_predict, hit_score, feature_table]
     
