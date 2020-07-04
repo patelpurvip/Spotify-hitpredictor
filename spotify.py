@@ -15,6 +15,7 @@ def hit_flop(track, artist):
     load_dotenv()
     client_id = os.getenv("SPOTIPY_CLIENT_ID")
     client_secret = os.getenv("SPOTIPY_CLIENT_SECRET")
+    print("CREDENTIALS", client_id, client_secret)    
 
     # Transform strings to lower case
     track = track.lower()
@@ -26,7 +27,7 @@ def hit_flop(track, artist):
 
     try:
         results = spotify.search(q='track:' + track, type='track')
-        
+        print("RESULTS SPOTIFY", results)
         # Find song uri by matching artist
         items = results['tracks']['items']
         for i in items:
@@ -36,11 +37,14 @@ def hit_flop(track, artist):
 
         # Setting information from audio analysis
         audio_analysis = spotify.audio_analysis(track_id=uri)
+        print("AUDIO ANALYSIS ", len(audio_analysis))
         count_sections = len(audio_analysis['sections'])
         chorus_hit = audio_analysis['sections'][2]['start']
         
         # Setting information from audio features
         audio_features = spotify.audio_features(tracks=[uri])
+        print("AUDIO FEATURES",audio_features[0]['tempo'])
+
         f = audio_features[0]
 
         # Arrange data to load to model
