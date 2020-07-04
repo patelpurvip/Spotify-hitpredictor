@@ -19,9 +19,9 @@ def hit_flop():
     track = request.form["song"]
     artist = request.form["artist"]
     print(track, artist)
+    response = spotify.hit_flop(track, artist)
     
     try:
-        response = spotify.hit_flop(track, artist)
         print(response)
         # hit_predict, hit_score = spotify.hit_flop(track, artist)
         if len(response) == 3:
@@ -43,6 +43,7 @@ def hit_flop():
             error = response[0]
             return render_template("index.html", score=error, item='home')
     except Exception as inst:
+        return render_template("index.html", score=inst, item='home')
         print("#################################################")
         print(type(inst))    # the exception instance
         print(inst.args)     # arguments stored in .args

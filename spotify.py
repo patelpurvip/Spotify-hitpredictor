@@ -22,9 +22,9 @@ def hit_flop(track, artist):
     artist = artist.lower()
 
     # Call song
-
+    
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=client_id, client_secret=client_secret))
-
+    print(spotify)
     try:
         results = spotify.search(q='track:' + track, type='track')
         print("RESULTS SPOTIFY", results)
