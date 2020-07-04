@@ -4,7 +4,7 @@ Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-
 
 ![Original image from Luxemburg Times](https://luwo-ldocs-prod.imgix.net/2017/12/11/2e0270cd-2d6b-4ca7-bbc4-b1b8e0f998a0.jpeg)
   
- Go to the final "[Hit or Flop?](https://spotify-hitpredictor.herokuapp.com/)" page!
+ Go to the final [Hit or Flop?](https://spotify-hitpredictor.herokuapp.com/) page!
  
 ## Project collaborators
 * [Purvi P. Patel](https://www.linkedin.com/in/purvippatel/)
