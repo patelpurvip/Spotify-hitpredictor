@@ -42,7 +42,7 @@ def hit_flop():
             error = response[0]
             return render_template("index.html", score=error, item='home')
     except:
-        return '=('   
+        return response   
 
 @app.route("/about/")
 def about():
