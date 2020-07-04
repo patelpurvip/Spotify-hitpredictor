@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 import pandas as pd
 import os
 
-# # test data
-# track = "black parade"
-# artist = "Beyoncé"
-
 def hit_flop(track, artist):
 
     # Load model
@@ -27,7 +23,6 @@ def hit_flop(track, artist):
     # Call song
 
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=client_id, client_secret=client_secret))
-    print(spotify)
 
     try:
         results = spotify.search(q='track:' + track, type='track')
@@ -65,23 +60,48 @@ def hit_flop(track, artist):
             chorus_hit,
             count_sections]]
         
-        # Create dataframe of data
+        # Arrange data to fill dictionary for DataFrame
+        key = ''      
+        if f['key'] == 1:
+            key = 'Major'
+        else:
+            key = 'Minor'
+
+        mode = ''
+        pitch_class = {-1:'No key was detected',
+            0:'C',
+            1:'C♯ or D♭',
+            2:'D',
+            3:'D♯ or E♭',
+            4:'E',
+            5:'F',
+            6:'F♯ or G♭',
+            7:'G',
+            8:'G♯ or A♭',
+            9:'A',
+            10:'A♯ or B♭',
+            11:'B'}
+        if f['mode'] in pitch_class:
+            mode = pitch_class[f['mode']]
+    
+
+        # Create DataFrame of data
         table = pd.DataFrame({
-            'danceability': [f['danceability']],
-            'energy': [f['energy']],
-            'key': [f['key']],
-            'loudness': [f['loudness']],
-            'mode': [f['mode']],
-            'speechiness': [f['speechiness']],
-            'acousticness': [f['acousticness']],
-            'instrumentalness': [f['instrumentalness']],
-            'liveness': [f['liveness']],
-            'valence': [f['valence']],
-            'tempo': [f['tempo']],
-            'duration_ms': [f['duration_ms']],
-            'time_signature': [f['time_signature']],
-            'chorus_hit': [chorus_hit],
-            'count_sections': [count_sections]
+            'Danceability': [f['danceability']],
+            'Energy': [f['energy']],
+            'Key': [key],
+            'Loudness (db)': [f['loudness']],
+            'Mode': [mode],
+            'Speechiness': [f['speechiness']],
+            'Acousticness': [f['acousticness']],
+            'Instrumentalness': [f['instrumentalness']],
+            'Liveness': [f['liveness']],
+            'Valence': [f['valence']],
+            'Tempo (beats per minute (BPM))': [f['tempo']],
+            'Duration (seconds)': [f['duration_ms']/1000],
+            'Time Signature': [f['time_signature']],
+            'Aprox timestamp the chorus "hit" (seconds)': [chorus_hit],
+            'Sections count': [count_sections]
             })
         ttable = table.T
         feature_table = ttable.to_html(classes="table table-hover table-success table-striped", 

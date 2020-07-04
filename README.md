@@ -6,10 +6,10 @@ Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-
   
  
 ## Project collaborators
-* [Purvi P. Patel](https://github.com/patelpurvip/)
-* [Cristina Bardan](https://github.com/cckuqui)
-* [Grecia Villarreal](https://github.com/greciavm)
-* [Heidy Guzman](https://github.com/heidyloreley)
+* [Purvi P. Patel](https://www.linkedin.com/in/purvippatel/)
+* [Cristina Bardan](https://www.linkedin.com/in/cristinabardan/)
+* [Grecia Villarreal](www.linkedin.com/in/greciavillarreal)
+* [Heidy Guzman](https://www.linkedin.com/in/heidyloreley/)
   
   
 ## Contents inside this repository
@@ -23,7 +23,7 @@ The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web
 
 
 ## Metadata Summary
-The original data, retrieved through Spotify's Web API, includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier for the track (uri).
+The original data, retrieved through Spotify's Web API (accesed though the Python library Spotipy), includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier for the track (uri).
 
 The dataset includes measurements for the following features, defined and measured by Spotify for each track:
 
@@ -149,42 +149,52 @@ Overall, these tests showed that eliminating any features did not improve accura
 In this case, the best variation model was with Standar Scaler normalization. With it we were able to see immediately with this model is that no one feature seemed to have a particularly strong weight or influence on the overall results:
 |Importance|Feature|
 |:---:|:---:|
-|0.1616016100025217|instrumentalness|
-|0.1070654609190537|acousticness|
-|0.10271071047704178|danceability|
-|0.08363844200055588|energy|
-|0.08230679984020853|loudness|
-|0.07510012135816571|duration_ms|
-|0.07410242758962575|speechiness|
-|0.07215948844632883|valence|
-|0.05429002409144878|tempo|
-|0.05138273046462514|liveness|
-|0.050923230770768046|chorus_hit|
-|0.03794584582792825|sections|
-|0.029724932619056243|key|
-|0.010268775607701109|mode|
-|0.006779399984970517|time_signature|
+|0.24652884971769662|instrumentalness|
+|0.10647688218070937|danceability|
+|0.10021253875816241|loudness|
+|0.09385057415725137|acousticness|
+|0.08341099244265467|duration_ms|
+|0.08323171690224049|energy|
+|0.06260221928220147|valence|
+|0.046057546266831645|speechiness|
+|0.03927362630575717|tempo|
+|0.037828883345652195|liveness|
+|0.037804710879875365|chorus_hit|
+|0.027115992403401484|sections|
+|0.023221514930213242|key|
+|0.006420602303837413|mode|
+|0.0059633501235151045|time_signature|
 
 Individually, each feature was quite weak as a predictor of whether or not a song would be a hit. However, with all the features included, this was actually the best performing model.
 
-* via local
 ```  
 Training Data Score: 0.9993836971682507
 Testing Data Score: 0.7883623625571665
 ```
 
-At first it seemed that while the training score improved, the testing score only improved slightly over prior models.  We thought at first that this meant that we might be overtraining the model, or that the results reflected limits to the dataset itself and the data's abilty to actually predict hit songs. However, we decided to see if part of the reason for the results were due to the power of the local computers we were using to run the models. To test this idea, we decided to run the same model through Google Collab, which did improve the result.  Lastly, the key difference in improving accuracy for the last variation of the model were final adjustments made to the number of trees (200), and the max depth (25).
+We saw that the adjustments we were making resulted in only slight improvements or variations in the results of each model. This led us to believe that any real improvement to the results required taking a closer look at the data we were using to train the model. We theorized that, since music tastes change relatively less from one decade to the next, but is much more pronouced over 30-40 years, perhaps limiting the data to a block of twenty years would improve the accuracy. We decided to use the songs from the 2000s since that is the most recent period of 20 years, and thus might more accurately predict what would be considered a hit today. With these adjustments, the accuracy of the model did in fact improve. The final adjustments made to the model, which maximized the results, were number of trees (200), and the max depth (25).
 
-* via Google Collab, with adjustments:
 ```  
-Training Data Score: 0.9964482070743931
-Testing Data Score: 0.9401060672407922
+Training Data Score: 0.8029484748840332
+Testing Data Score: 0.7852381467819214
 ```
   
     
 ## Results
-After running the 4 models and the variations described above, we chose the Random Forest model with adjusted settings as the final model, given that it had produced by far the best results with the highest levels of accuracy.
-  
-  
+After running the 4 models and the variations described above, we chose the Random Forest model with adjusted settings as the final model, given that it had produced the best results with the highest levels of accuracy.
+
+
+## Deployment of the Model & Analysis of Historical "hit" data
+We designed a public webpage for final deployment of the machine learning model, found [here](PLACEHOLDER).
+
+Visitors to the site can input a recently released song (or their favorite past song) to see how the model would determine whether it might be a "hit" or not. A second page provides interactives graphs to analyze the preferences in different song features accross all decades in the full dataset (1960s-2010s), and provides a bit more background as to how each feature is defined.
+
+With graph analysis, we noticed consistency in some audio features for hits throughout the decades, meaning that hits have higher quantities of these features and they seems to retain the same influence as to whether a song is popular.  These feature include: danceability, energy, loudness and valence. Other features have increasingly fluctuated in their importance from one decade to the next, characteristics like chorus hits, duration, liveness, mode, sections and speechiness.  That is to say that maybe in the 60's these features were more prominent in hits of that era, but in recent decades songs with higher levels of these features are more likely to be flops.
+
+
 ## Copyright
-The original dataset was retrived from Kaggle and created by Farooq Ansari. As a team, we created our own machine learning model to analize the songs, and further analyzed the features for a breakdown by decade. The first image above was retrive from Luxemburg Times site on 06/23/2020.
+* The original dataset was retrived from Kaggle and created by Farooq Ansari. As a team, we created our own machine learning model to analize the songs, and further analyzed the features for a breakdown by decade. 
+* The template for the website deploying the model was designed by [HTML Codex](https://htmlcodex.com/)
+* Graphcs were generated through [Tableau](https://public.tableau.com/profile/grecia.villarreal#!/vizhome/Spotify_15936539551520/Spotify?publish=yes
+)
+* The first image above was retrive from Luxemburg Times site on 06/23/2020.

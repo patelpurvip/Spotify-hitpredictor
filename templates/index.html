@@ -5,8 +5,12 @@
     <div class="hero row align-items-center">
         <!-- Explanation variables -->
         <div class="col-md-7">
+            <p>We are analyzing:</p>
             <h2><strong>{{song}}</strong></h2>
+            <p>The features our model reviews are:</p>
             {{feature_table | safe}}
+            <p>More about these features at<a href='https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/'>
+                Spotify's Audio Features</a></p>
         </div>
         <!-- Hit or Flop Calculator -->
         <div class="col-md-5">
