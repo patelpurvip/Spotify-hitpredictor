@@ -46,7 +46,7 @@ def hit_flop():
 
 @app.route("/about/")
 def about():
-    return render_template("aboutv2.html", item='about')
+    return render_template("about.html", item='about')
 
 @app.route("/historical/")
 def historical():
