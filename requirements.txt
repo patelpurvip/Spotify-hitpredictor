@@ -37,10 +37,6 @@ scipy==1.4.1
 six==1.15.0
 sklearn==0.0
 spotipy==2.13.0
-tensorboard==2.2.2
-tensorboard-plugin-wit==1.7.0
-tensorflow-cpu==2.2.0
-tensorflow-estimator==2.2.0
 termcolor==1.1.0
 threadpoolctl==2.1.0
 urllib3==1.25.9
