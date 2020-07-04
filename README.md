@@ -186,7 +186,7 @@ After running the 4 models and the variations described above, we chose the Rand
 
 
 ## Deployment of the Model & Analysis of Historical "hit" data
-We designed a public webpage for final deployment of the machine learning model on [Heroku](https://spotify-hitpredictor.herokuapp.com/).
+We designed a public webpage for final publication of the machine learning model, deployed on [Heroku](https://spotify-hitpredictor.herokuapp.com/).
 
 Visitors to the site can input a recently released song (or their favorite past song) to see how the model would determine whether it might be a "hit" or not. A second page provides interactives graphs to analyze the preferences in different song features accross all decades in the full dataset (1960s-2010s), and provides a bit more background as to how each feature is defined.
 
