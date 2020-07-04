@@ -4,6 +4,7 @@ Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-
 
 ![Original image from Luxemburg Times](https://luwo-ldocs-prod.imgix.net/2017/12/11/2e0270cd-2d6b-4ca7-bbc4-b1b8e0f998a0.jpeg)
   
+ Go to the final "[Hit or Flop?](https://spotify-hitpredictor.herokuapp.com/)" page!
  
 ## Project collaborators
 * [Purvi P. Patel](https://www.linkedin.com/in/purvippatel/)
@@ -185,7 +186,7 @@ After running the 4 models and the variations described above, we chose the Rand
 
 
 ## Deployment of the Model & Analysis of Historical "hit" data
-We designed a public webpage for final deployment of the machine learning model, found [here](PLACEHOLDER).
+We designed a public webpage for final deployment of the machine learning model on [Heroku](https://spotify-hitpredictor.herokuapp.com/).
 
 Visitors to the site can input a recently released song (or their favorite past song) to see how the model would determine whether it might be a "hit" or not. A second page provides interactives graphs to analyze the preferences in different song features accross all decades in the full dataset (1960s-2010s), and provides a bit more background as to how each feature is defined.
 
