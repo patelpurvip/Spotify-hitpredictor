@@ -2,6 +2,7 @@
 
 
 {% block main_panel %}
+
 <!-- Page Header Start -->
 <div class="page-header">
     <h2>About</h2>
@@ -12,195 +13,175 @@
 
 <!-- About Start -->
 <div class="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-md-6">
-                <div class="about-img">
-                    <img src="../static/img/about.jpg" alt="Original image from pngitem.com">
+
+    <div class="about-card">
+        <div class="about-text">
+            <img src="../static/img/about.jpg" class="float-left" alt="Original image from pngitem.com">
+            <h2>Introduction</h2>
+            <p>
+                As music lovers, we are interested in the trending predictions of new music.
+                Therefore, we decided to create a prediction model based on 13 Spotify variables
+                of song features and test it on its music library to decide if it could be a 
+                <strong>"Hit or a Flop"</strong>.
+            </p>
+            <br>
+            <p>
+                To develop our Machine Learning model we used Spotify "hit predictor"
+                <a href="https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset">dataset</a>,
+                created by Farooq Ansari as our input data.
+            </p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="about-card">
+        <div class="about-text">
+            <h2>Metadata Summary</h2>
+                <p>
+                    The original data includes 40,000+ songs with release dates ranging from 1960-2019.
+                    The dataset includes measurements for the following features for each track:
+                </p>
+                <br>
+                <p style="text-align:center;">
+                    <b><i>Danceability, energy, key, loudness, mode, speechiness, acousticness,
+                        <br>
+                    instrumentalness, liveness, valence, tempo, duration (in milliseconds),
+                        <br>
+                    time signature, chorus hit and sections.</i></b></p>
+                <br>
+                <p>
+                    The last two features were defined by Ansari and extracted from the data received 
+                    by the API call for Audio Analysis of each particular track, while the first 
+                    ones are defined by Spotify on its Audio Features API call.
+                </p>
+                <br>
+                <p>
+                    Finally, we use <strong style="font-size: large">target</strong>, a boolean variable
+                    describing if the track ever appeared on Billboard's Weekly Hot-100 list (as Ansari 
+                    obtain in its original dataset), to define if the track could be classified as a hit
+                    or flop.
+                </p>
+                <br>
+                <p>
+                    Details about each of the features and what they measure can be found on
+                    <a href="https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset">Kaggle</a>
+                    , and through 
+                    <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify's documentation.</a> 
+                    Ansari's original source code can be found 
+                    <a href="https://github.com/fortytwo102/the-spotify-hit-predictor-dataset">here</a>.
+                </p>
+        </div>
+    </div>
+    
+    <br>
+    
+    <div class="about-card">
+        <div class="about-text">
+            <h2>Metodology and Results</h2>
+                <p>
+                    The team trained and tested 4 different models to evaluate the dataset, in addition to
+                    variations within some of the models, like removing some of the variables to prove its
+                    significance within each model.
+                </p>
+                <ol>
+                    <li>SVM (Support Vector Machine) Model</li>
+                    <li>Logistic Regression</li>
+                    <li>Neural Network/Deep Learning Model</li>
+                    <li>Random Forest Model</li>
+                </ol>
+                <p>
+                    Because of the different natures of values that the variables had, we tried 3 kinds of
+                    normalization:
+                </p>
+                <ol>
+                    <li>Standard Scaler</li>
+                    <li>MinMax Scaler</li>
+                    <li>Independent normalization of each variable</li>
+                </ol>
+                <p>
+                    It is important to highlight that the models were run in local servers and then, the ones with
+                    the best results were run through Google's Collaboratory to maximize their score.
+                </p>
+                <br>
+                <p style="text-align:center;"><b>Results</b></p>
+                <p> After running the 4 models and the variations described above, we chose the <strong>Random
+                        Forest Model</strong>
+                    with adjusted settings as the final model, given that it produced the best results with the
+                    highest levels of accuracy.
+                </p>
+        </div>
+    </div>
+</div>
+
+    <!-- Team Start -->
+<div class="team">
+    <div class="section-header">
+        <h1>Team Members</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="../static/img/cristina.jpg" alt="Team Image">
+                </div>
+                <div class="team-text">
+                    <h2>Cristina Bardán</h2>
+                    <h3>Developer</h3>
+                    <div class="team-social">
+                        <a class="social-li" href="https://www.linkedin.com/in/cristinabardan/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-gh" href="https://github.com/cckuqui"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-md-6">
-                <div class="about-text">
-                    <h2>Introduction</h2>
-                    <p>
-                        As music lovers, we are interested in the trending predictions of new music.
-                        Therefore, we decided to create a prediction model based on 13 Spotify variables
-                        of song features and test it on its music library to decide if it could be a <strong>"Hit or a
-                            Flop"</strong>.
-                    </p>
-
-                    <p>
-                        To develop our Machine Learning model we used Spotify "hit predictor"
-                        <a href="https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset">dataset</a>,
-                        created by Farooq Ansari as our input data.
-                    </p>
-
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="../static/img/grecia.jpg" alt="Team Image">
+                </div>
+                <div class="team-text">
+                    <h2>Grecia Villarreal</h2>
+                    <h3>Developer</h3>
+                    <div class="team-social">
+                        <a class="social-li" href="https://www.linkedin.com/in/greciavillarreal/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-gh" href="https://github.com/greciavm"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="../static/img/heidy.jpg" alt="Team Image">
+                </div>
+                <div class="team-text">
+                    <h2>Heidy Guzmán</h2>
+                    <h3>Developer</h3>
+                    <div class="team-social">
+                        <a class="social-li" href="https://www.linkedin.com/in/heidyloreley/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-gh" href="https://github.com/heidyloreley"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="../static/img/purvi.jpg" alt="Team Image">
+                </div>
+                <div class="team-text">
+                    <h2>Purvi Patel</h2>
+                    <h3>Developer</h3>
+                    <div class="team-social">
+                        <a class="social-li" href="https://www.linkedin.com/in/purvippatel/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-gh" href="https://github.com/patelpurvip"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- About End -->
-
-<!-- Single Page Start -->
-<div class="single">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Metadata Summary</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            The original data includes 40,000+ songs with release dates ranging from 1960-2019.
-                            The dataset includes measurements for the following features for each track:
-                        </p>
-                        <p style="margin-left: 20px; font-size: large; text-align:center;"><b><i>
-                                    Danceability, energy, key, loudness, mode, speechiness, acousticness,
-                                    instrumentalness,
-                                    liveness, valence, tempo, duration (in milliseconds),
-                                    time signature, chorus hit and sections.
-                                </i></b></p>
-                        <p>
-                            The last two features were defined by Ansari and extracted from the data received by the API
-                            call for Audio Analysis of each particular track,
-                            while the first ones are defined by Spotify on its Audio Features API call.
-                        </p>
-                        <p>
-                            Finally, we use <strong style="font-size: large">target</strong>, a boolean variable
-                            describing
-                            if the track ever appeared on Billboard's Weekly Hot-100 list
-                            (as Ansari obtain in its original dataset), to define if the track could be classified as a
-                            hit
-                            or flop.
-                        </p>
-                        <p>
-                            Details about each of the features and what they measure can be found on
-                            <a style="color: #202020; font-weight: bolder"
-                                href="https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset">Kaggle</a>,
-                            and through
-                            <a style="color: #202020; font-weight: bolder"
-                                href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify's
-                                documentation</a>.
-                            Ansari's original source code can be found <a style="color:#202020; font-weight: bolder"
-                                href="https://github.com/fortytwo102/the-spotify-hit-predictor-dataset">here</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-12">
-                <h2>Metodology and Results</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            The team trained and tested 4 different models to evaluate the dataset, in addition to
-                            variations within some of the models, like removing some of the variables to prove its
-                            significance within each model.
-                        <ol>
-                            <li>SVM (Support Vector Machine) Model</li>
-                            <li>Logistic Regression</li>
-                            <li>Neural Network/Deep Learning Model</li>
-                            <li>Random Forest Model</li>
-                        </ol>
-                        Because of the different natures of values that the variables had, we tried 3 kinds of
-                        normalization:
-                        <ol>
-                            <li>1. Standard Scaler</li>
-                            <li>2. MinMax Scaler</li>
-                            <li>3. Independent normalization of each variable</li>
-                        </ol>
-                        It is important to highlight that the models were run in local servers and then, the ones with
-                        the best results were run through Google's Collaboratory to maximize their score.
-                        </p>
-                        <br>
-                        <h4>Results:</h4>
-                        <p> After running the 4 models and the variations described above, we chose the <strong>Random
-                                Forest Model</strong>
-                            with adjusted settings as the final model, given that it produced the best results with the
-                            highest levels of accuracy.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Single Page End -->
-
-
-
-    <!-- Team Start -->
-    <div class="team">
-        <div class="container">
-            <div class="section-header">
-                <h1>Team Members</h1>
-                <br>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="../static/img/cristina.jpg" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Cristina Bardán</h2>
-                            <h3>Developer</h3>
-                            <div class="team-social">
-                                <a class="social-li" href="https://www.linkedin.com/in/cristinabardan/"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="social-gh" href="https://github.com/cckuqui"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="../static/img/grecia.jpg" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Grecia Villarreal</h2>
-                            <h3>Developer</h3>
-                            <div class="team-social">
-                                <a class="social-li" href="https://www.linkedin.com/in/greciavillarreal/"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="social-gh" href="https://github.com/greciavm"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="../static/img/heidy.jpg" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Heidy Guzmán</h2>
-                            <h3>Developer</h3>
-                            <div class="team-social">
-                                <a class="social-li" href="https://www.linkedin.com/in/heidyloreley/"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="social-gh" href="https://github.com/heidyloreley"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="../static/img/purvi_der.jpg" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Purvi Patel</h2>
-                            <h3>Developer</h3>
-                            <div class="team-social">
-                                <a class="social-li" href="https://www.linkedin.com/in/purvippatel/"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="social-gh" href="https://github.com/patelpurvip"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Team End -->
 
-    {% endblock %}
+{% endblock %}
