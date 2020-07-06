@@ -7,17 +7,6 @@ import os
 
 def hit_flop(track, artist):
 
-    model_error = 0
-
-    try:
-        # Load model
-        model = load(open('model.pkl', 'rb'))
-        scaler = load(open('scaler.pkl', 'rb'))
-        return model, scaler
-    except:
-        model_error = 1
-        return model_error
-    
     # Load keys
     load_dotenv()
     client_id = os.getenv("SPOTIPY_CLIENT_ID")
@@ -47,6 +36,17 @@ def hit_flop(track, artist):
         
         # Setting information from audio features
         audio_features = spotify.audio_features(tracks=[uri])
+
+        return audio_features, count_sections, chorus_hit  
+    
+    except:
+        error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
+        return [error]
+
+    try:
+        # Load model
+        model = load(open('model.pkl', 'rb'))
+        scaler = load(open('scaler.pkl', 'rb'))
 
         f = audio_features[0]
 
@@ -125,8 +125,5 @@ def hit_flop(track, artist):
         return [hit_predict, hit_score, feature_table]
     
     except:
-        if model_error == 1:
-            error = 'Model'
-        else: 
-            error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
+        error = "Model Error"
         return [error]
