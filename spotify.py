@@ -103,15 +103,6 @@ def hit_flop(track, artist):
             justify='center',
             header=False)
 
-        return x, feature_table  
-    
-    except:
-        error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
-        return [error]
-
-    try:
-        feature_table = feature_table
-
         # Load model
         model = load(open('model.pkl', 'rb'))
         scaler = load(open('scaler.pkl', 'rb'))
@@ -124,7 +115,8 @@ def hit_flop(track, artist):
         hit_score = model.predict_proba(x_scaled)
 
         return [hit_predict, hit_score, feature_table]
+ 
     
     except:
-        error = "Model Error"
+        error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
         return [error]
