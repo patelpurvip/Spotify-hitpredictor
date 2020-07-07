@@ -1,4 +1,4 @@
-from pickle import load
+import joblib
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
@@ -109,8 +109,8 @@ def hit_flop(track, artist):
     
     try:
         # Load model
-        model = load(open('model.pkl', 'rb'))
-        scaler = load(open('scaler.pkl', 'rb'))
+        model = joblib.load('model.sav')
+        scaler = joblib.load('scaler.sav')
 
         # Scaling data
         x_scaled = scaler.transform(x)
