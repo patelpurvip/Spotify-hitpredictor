@@ -102,7 +102,12 @@ def hit_flop(track, artist):
         feature_table = ttable.to_html(classes="table table-hover table-success table-striped", 
             justify='center',
             header=False)
-
+ 
+    except:
+        error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
+        return [error]
+    
+    try:
         # Load model
         model = load(open('model.pkl', 'rb'))
         scaler = load(open('scaler.pkl', 'rb'))
@@ -115,8 +120,7 @@ def hit_flop(track, artist):
         hit_score = model.predict_proba(x_scaled)
 
         return [hit_predict, hit_score, feature_table]
- 
     
     except:
-        error = "We can't find your entry in the spotify database, please check your spelling and/or try again"
-        return [error]
+        error_model = "Model error"
+        return [error_model]
