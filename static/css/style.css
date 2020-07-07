@@ -320,7 +320,7 @@ a:focus {
 }
 
 .header .hero .form .card {
-    height: 150px;
+    height: auto;
 }
 
 .header .hero .form .card .card-title {
