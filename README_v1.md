@@ -66,11 +66,6 @@ The team trained and tested 4 different models to evaluate the dataset, in addit
 ### 1) SVM with two normalization variations
 We ran an SVM models with all 16 features, in two different functions for the normalization: with Standard Scaler and the other with MinMax Scaler, both for x values with the following results:
 
-    
-    from sklearn.svm import SVC 
-    model_SVM = SVC(kernel='linear')
-    model_SVM.fit(x_train_scaled, y_train)
-    
 * Standard Scaler:
 ``` 
 Training Score: 0.7257776768626942
@@ -85,10 +80,6 @@ Testing Score: 0.7306606986474652
 ----
 ### 2) Logistic Regression with two normalization variations
 Same as SVM, we ran it with all 16 features and with the same normalization variations:
-
-    from sklearn.linear_model import LogisticRegression
-    model_LR = LogisticRegression()
-    model_LR.fit(x_train_scaled, y_train)
 
 * Standard Scaler:
 ```
@@ -133,27 +124,6 @@ Testing Data Score: 0.7286173007687068
 ### 3) Neural Network/Deep Learning
 We originally designed the archetecture of our deep learning model to have 4 layers, while measuring the loss and accuracy levels while training and testing the model. In the process of training and testing the model, we discovered that the addition of the final layer was essentially overtraining the model, leading to decreased accuracy. As such, we elimated the last layer from the final version of the model. The best variation model was with 500 epochs, a batch size of 2000, and with MinMax Scaler normalization.
 
-    #Create a sequential model with 3 hidden layers
-    from tensorflow.keras.models import Sequential
-    model = Sequential() 
-
-    from tensorflow.keras.layers import Dense
-    number_inputs = 15  
-    number_classes = 2
-
-    model.add(Dense(units=14,activation='relu', input_dim=number_inputs))
-    model.add(Dense(units=120,activation='relu'))
-    model.add(Dense(units=80,activation='relu'))
-    model.add(Dense(units=number_classes, activation='softmax')) 
-
-    #Compile the Model
-    import tensorflow as tf
-    opt = tf.keras.optimizers.Adam(learning_rate=0.001)
-    model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
-
-    #Training the Model
-    history = model.fit(X_train_scaled, y_train_categorical, epochs=500, batch_size=2000, shuffle=True, verbose=2)
-
 ```
 Training Score: 0.7969444394111633
 Testing Score: 0.7762965559959412
@@ -197,10 +167,6 @@ In this case, the best variation model was with Standar Scaler normalization. Wi
 |0.0059633501235151045|time_signature|
 
 Individually, each feature was quite weak as a predictor of whether or not a song would be a hit. However, with all the features included, this was actually the best performing model.
-
-    from sklearn.ensemble import RandomForestClassifier
-    model = RandomForestClassifier(n_estimators=200, max_depth=25) 
-    model = model.fit(x_train_scaled, y_train)
 
 ```  
 Training Data Score: 0.9993836971682507
