@@ -9,7 +9,7 @@ Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-
 ## Project collaborators
 * [Purvi P. Patel](https://www.linkedin.com/in/purvippatel/)
 * [Cristina Bardan](https://www.linkedin.com/in/cristinabardan/)
-* [Grecia Villarreal](www.linkedin.com/in/greciavillarreal/)
+* [Grecia Villarreal](https://www.linkedin.com/in/greciavillarreal/)
 * [Heidy Guzman](https://www.linkedin.com/in/heidyloreley/)
   
   
