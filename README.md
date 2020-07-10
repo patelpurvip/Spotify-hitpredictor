@@ -20,11 +20,11 @@ Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-
   
   
 ## Project Scope
-The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web API, base on the tracks labeled `hit` or `flop` by the author, which can be used to make a classification model to predicts whether any given track would be a 'Hit' or not. Base on this the team used this data to do a retroactive analysis of features for songs from each decade (1960s - 2010s).
+The dataset by Farooq Ansari has features for tracks fetched using Spotify's Web API, base on the tracks labeled `hit` or `flop` by the author, which can be used to make a classification model to predict whether any given track would be a 'Hit' or not. While the original Kaggle dataset was created by Ansari, the team created our own machine learning model to analyze the songs, and then further analyzed the data for a retrospective analysis of features for songs from each decade (1960s - 2010s)..
 
 
 ## Metadata Summary
-The original data, retrieved through Spotify's Web API (accesed though the Python library Spotipy), includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier for the track (uri).
+The original data, retrieved through Spotify's Web API (accesed though the Python library Spotipy), includes 40,000+ songs with release dates ranging from 1960-2019. Each track is identified by the track's name, the artist's name, and a unique resource identifier (uri) for the track.
 
 The dataset includes measurements for the following features, defined and measured by Spotify for each track:
 
@@ -64,7 +64,7 @@ The team trained and tested 4 different models to evaluate the dataset, in addit
 
 ----
 ### 1) SVM with two normalization variations
-We ran an SVM models with all 16 features, in two different functions for the normalization: with Standard Scaler and the other with MinMax Scaler, both for x values with the following results:
+We ran an SVM model with all 16 features, in two different functions for the normalization: one with Standard Scaler and the other with MinMax Scaler, both for x values and with the following results:
 
     
     from sklearn.svm import SVC 
@@ -84,7 +84,7 @@ Testing Score: 0.7306606986474652
   
 ----
 ### 2) Logistic Regression with two normalization variations
-Same as SVM, we ran it with all 16 features and with the same normalization variations:
+Same as SVM, we ran the model with all 16 features and with the same normalization variations:
 
     from sklearn.linear_model import LogisticRegression
     model_LR = LogisticRegression()
@@ -127,11 +127,11 @@ Training Data Score: 0.7280482662428233
 Testing Data Score: 0.7286173007687068
 ```
 
-> None of these adjustments produced improvements high enough where it seemed worth it to develop the models furhter. Therefore, we decide to test other types of models altogether.
+> None of these adjustments produced improvements high enough where it seemed worth it to develop the models further. Therefore, we decide to test other types of models altogether.
   
 ----
 ### 3) Neural Network/Deep Learning
-We originally designed the archetecture of our deep learning model to have 4 layers, while measuring the loss and accuracy levels while training and testing the model. In the process of training and testing the model, we discovered that the addition of the final layer was essentially overtraining the model, leading to decreased accuracy. As such, we elimated the last layer from the final version of the model. The best variation model was with 500 epochs, a batch size of 2000, and with MinMax Scaler normalization.
+We originally designed the archetecture of our deep learning model to have 4 layers, while measuring the loss and accuracy levels during training and testing of the model. In the process of training and testing the model, we discovered that the addition of the final layer was essentially overtraining the model, leading to decreased accuracy. As such, we eliminated the last layer from the final version of the model. The best variation of the model was with 500 epochs, a batch size of 2000, and MinMax Scaler normalization.
 
     #Create a sequential model with 3 hidden layers
     from tensorflow.keras.models import Sequential
@@ -159,7 +159,7 @@ Training Score: 0.7969444394111633
 Testing Score: 0.7762965559959412
 ```
   
-The initial test of the Neural Network, with all 16 features, performed than the SVM or Logistic Regression Models. For this reason, we decided to run several variations to see if eliminating and one of the features, or some features in combination, would improve the model's accuracy. The results can be seen in the table below.
+The initial test of the Neural Network, with all 16 features, performed a bit better than the SVM or Logistic Regression Models. For this reason, we decided to run several variations to see if eliminating any one of the features, or some features in combination, would improve the model's accuracy. The results can be seen in the table below.
 
 |Features Missing|Training Score|Testing Score|
 |:---:|:---:|:---:|
@@ -177,7 +177,7 @@ Overall, these tests showed that eliminating any features did not improve accura
   
 ----
 ### 4) Random Forest
-In this case, the best variation model was with Standar Scaler normalization. With it we were able to see immediately with this model is that no one feature seemed to have a particularly strong weight or influence on the overall results:
+In this case, the best variation of the model was with Standard Scaler normalization. With this model, we were able to see immediately that no one feature seemed to have a particularly strong weight or influence on the overall results:
 |Importance|Feature|
 |:---:|:---:|
 |0.24652884971769662|instrumentalness|
@@ -207,7 +207,7 @@ Training Data Score: 0.9993836971682507
 Testing Data Score: 0.7883623625571665
 ```
 
-We saw that the adjustments we were making resulted in only slight improvements or variations in the results of each model. This led us to believe that any real improvement to the results required taking a closer look at the data we were using to train the model. We theorized that, since music tastes change relatively less from one decade to the next, but is much more pronouced over 30-40 years, perhaps limiting the data to a block of twenty years would improve the accuracy. We decided to use the songs from the 2000s since that is the most recent period of 20 years, and thus might more accurately predict what would be considered a hit today. With these adjustments, the accuracy of the model did in fact improve. The final adjustments made to the model, which maximized the results, were number of trees (200), and the max depth (25).
+We saw that the adjustments we were making resulted in only slight improvements or variations in the results of each model. This led us to believe that any real improvement to the results required taking a closer look at the data we were using to train the model. We theorized that, since music tastes change relatively less from one decade to the next but are much more pronouced over 30-40 years, perhaps limiting the data to a block of twenty years would improve the accuracy. We decided to use the songs from the 2000s since that is the most recent period of 20 years, and thus might more accurately predict what would be considered a hit today. With these adjustments, the accuracy of the model did in fact improve. The final adjustments made to the model, which maximized the results, were number of trees (200), and the max depth (25).
 
 ```  
 Train score: 0.9967398391653989
@@ -222,14 +222,14 @@ After running the 4 models and the variations described above, we chose the Rand
 ## Deployment of the Model & Analysis of Historical "hit" data
 We designed a public webpage for final publication of the machine learning model, deployed on [Heroku](https://spotify-hitpredictor.herokuapp.com/).
 
-Visitors to the site can input a recently released song (or their favorite past song) to see how the model would determine whether it might be a "hit" or not. A second page provides interactives graphs to analyze the preferences in different song features accross all decades in the full dataset (1960s-2010s), and provides a bit more background as to how each feature is defined.
+Visitors to the site can input a recently released song (or their favorite past song) to see how the model would determine whether it might be a "hit" or not. A second page provides interactives graphs to analyze the preferences in different song features across all decades in the full dataset (1960s-2010s), and provides a bit more background as to how each feature is defined.
 
-With graph analysis, we noticed consistency in some audio features for hits throughout the decades, meaning that hits have higher quantities of these features and they seems to retain the same influence as to whether a song is popular.  These feature include: danceability, energy, loudness and valence. Other features have increasingly fluctuated in their importance from one decade to the next, characteristics like chorus hits, duration, liveness, mode, sections and speechiness.  That is to say that maybe in the 60's these features were more prominent in hits of that era, but in recent decades songs with higher levels of these features are more likely to be flops.
+With graph analysis, we noticed consistency in some audio features for hits throughout the decades, meaning that hits have higher quantities of these features and they seems to retain the same influence as to whether a song is popular.  These feature include: danceability, energy, loudness and valence. Other features have increasingly fluctuated in their importance from one decade to the next, characteristics like chorus hit, duration, liveness, mode, sections and speechiness.  That is to say that maybe in the 60's these features were more prominent in hits of that era, but in recent decades songs with higher levels of these features are more likely to be flops.
 
 
 ## Copyright
-* The original dataset was retrived from Kaggle and created by Farooq Ansari. As a team, we created our own machine learning model to analize the songs, and further analyzed the features for a breakdown by decade. 
+* The original dataset was retrived from Kaggle and created by Farooq Ansari.  
 * The template for the website deploying the model was designed by [HTML Codex](https://htmlcodex.com/)
-* Graphcs were generated through [Tableau](https://public.tableau.com/profile/grecia.villarreal#!/vizhome/Spotify_15936539551520/Spotify?publish=yes
+* Graphics were generated through [Tableau](https://public.tableau.com/profile/grecia.villarreal#!/vizhome/Spotify_15936539551520/Spotify?publish=yes
 )
 * The first image above was retrive from Luxemburg Times site on 06/23/2020.
