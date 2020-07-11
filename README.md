@@ -1,4 +1,4 @@
-# FinalProject-Spotify
+# Spotify-hitpredictor
 This project was designed as a machine learning exercise using the spotify "hit predictor" dataset, created by Farooq Ansari.
 Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset).
 
