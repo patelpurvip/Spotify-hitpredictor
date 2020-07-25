@@ -2,7 +2,7 @@
 This project was designed as a machine learning exercise using the spotify "hit predictor" dataset, created by Farooq Ansari.
 Original dataset available [here](https://www.kaggle.com/theoverman/the-spotify-hit-predictor-dataset).
 
-![Original image from Luxemburg Times](https://luwo-ldocs-prod.imgix.net/2017/12/11/2e0270cd-2d6b-4ca7-bbc4-b1b8e0f998a0.jpeg)
+![Original image from Luxemburg Times](static/img/about2.png)
   
 ## Go to the final [Hit or Flop?](https://spotify-hitpredictor.herokuapp.com/) page!
  
@@ -232,4 +232,4 @@ With graph analysis, we noticed consistency in some audio features for hits thro
 * The template for the website deploying the model was designed by [HTML Codex](https://htmlcodex.com/)
 * Graphics were generated through [Tableau](https://public.tableau.com/profile/grecia.villarreal#!/vizhome/Spotify_15936539551520/Spotify?publish=yes
 )
-* The first image above was retrive from Luxemburg Times site on 06/23/2020.
+* The first image above was retrive from [Luxemburg Times](https://luwo-ldocs-prod.imgix.net/2017/12/11/2e0270cd-2d6b-4ca7-bbc4-b1b8e0f998a0.jpeg) site on 06/23/2020.
